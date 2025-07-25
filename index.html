@@ -1,11 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Belunay Belleza Natural</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #faf8f3;
+      color: #3e3e3e;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #dcd1c3;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 1px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #c0a68d;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+    .producto {
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #c0a68d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #a78b75;
+    }
+    input, select {
+      padding: 8px;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #resultado {
+      background-color: #f3ede7;
+      border-left: 4px solid #c0a68d;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>¡Hola! Esta será la página web de Belunay Belleza Natural</h1>
-  <p>Estamos trabajando en el diseño completo. Vuelve pronto 💫</p>
+
+  <header>
+    <h1>Belunay Belleza Natural</h1>
+    <p>Cuidado personal inspirado en la naturaleza y tradición</p>
+  </header>
+
+  <section>
+    <h2>Nuestros Productos</h2>
+    <div class="producto">
+      <h3>Crema Facial</h3>
+      <p>Hidratación profunda con sebo de res y extractos botánicos. Ideal para todo tipo de piel.</p>
+    </div>
+    <div class="producto">
+      <h3>Sérum Facial</h3>
+      <p>Concentrado regenerador con aceite esencial de rosa mosqueta y caléndula.</p>
+    </div>
+    <div class="producto">
+      <h3>Jabón Artesanal</h3>
+      <p>Purificación suave con ingredientes naturales. Sin sulfatos ni fragancias artificiales.</p>
+    </div>
+    <div class="producto">
+      <h3>Tónico Capilar</h3>
+      <p>Fortalecimiento del cuero cabelludo con romero, ortiga y lavanda.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Test: ¿Qué tipo de piel tienes?</h2>
+    <form id="testPiel">
+      <label>Edad:</label>
+      <input type="number" name="edad" min="1" required />
+
+      <label>¿Tu piel brilla mucho durante el día?</label>
+      <select name="brillo">
+        <option value="sí">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label>¿Sientes tu piel seca o con tirantez después de lavarla?</label>
+      <select name="sequedad">
+        <option value="sí">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label>¿Tienes zonas con granitos o enrojecimiento frecuente?</label>
+      <select name="sensibilidad">
+        <option value="sí">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label>¿Tu piel tiene zonas secas y otras muy brillantes?</label>
+      <select name="mixta">
+        <option value="sí">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <button type="submit">Ver resultado</button>
+    </form>
+
+    <div id="resultado"></div>
+  </section>
+
+  <script>
+    document.getElementById('testPiel').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const edad = parseInt(e.target.edad.value);
+      const brillo = e.target.brillo.value === 'sí';
+      const sequedad = e.target.sequedad.value === 'sí';
+      const sensibilidad = e.target.sensibilidad.value === 'sí';
+      const mixta = e.target.mixta.value === 'sí';
+
+      let tipo = '';
+      let recomendacion = '';
+
+      if (brillo && !sequedad && !mixta) {
+        tipo = 'Piel Grasa';
+        recomendacion = 'Usa nuestro jabón purificante y tónico capilar para regular el sebo.';
+      } else if (sequedad && !brillo && !mixta) {
+        tipo = 'Piel Seca';
+        recomendacion = 'Recomendamos la crema facial y sérum con ingredientes hidratantes.';
+      } else if (sensibilidad && !brillo && !sequedad) {
+        tipo = 'Piel Sensible';
+        recomendacion = 'El sérum facial con caléndula y el jabón suave son ideales.';
+      } else if (mixta) {
+        tipo = 'Piel Mixta';
+        recomendacion = 'Alterna el jabón con la crema facial en zonas secas.';
+      } else {
+        tipo = 'Piel Normal';
+        recomendacion = 'Puedes usar cualquier producto Belunay según tu necesidad.';
+      }
+
+      const mensaje = `<strong>Tipo de piel:</strong> ${tipo}<br><strong>Recomendación:</strong> ${recomendacion}`;
+      document.getElementById('resultado').innerHTML = mensaje;
+    });
+  </script>
+
 </body>
 </html>
