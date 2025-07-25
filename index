@@ -2,109 +2,123 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Belunay Belleza Natural</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Quicksand', sans-serif;
-      background-color: #fefcf6;
-      color: #3e3e3e;
+      font-family: 'Raleway', sans-serif;
+      background-color: #fefaf4;
+      color: #333;
     }
+
     header {
-      background-color: #f2efe6;
       text-align: center;
-      padding: 2rem 1rem;
+      background-color: #fefaf4;
+      padding: 2rem;
+      background-image: url('https://i.imgur.com/2gbRO9h.png'); /* Plantas decorativas */
+      background-size: cover;
+      background-position: center;
     }
+
     header img {
-      width: 100px;
+      width: 160px;
       margin-bottom: 1rem;
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin: 0;
+      color: #4a5734;
     }
-    .tagline {
+
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
       font-size: 1.2rem;
-      color: #7a7359;
       margin-top: 0.5rem;
     }
+
     nav {
-      background-color: #d9d1c1;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem;
+      background-color: #e7dfd2;
+      padding: 0.8rem;
     }
+
     nav a {
       text-decoration: none;
-      color: #3e3e3e;
-      font-weight: bold;
+      color: #4a5734;
+      font-weight: 600;
+      transition: color 0.3s;
     }
+
+    nav a:hover {
+      color: #a3714f;
+    }
+
     .hero {
       text-align: center;
-      padding: 3rem 1rem;
-      background-image: url('https://images.unsplash.com/photo-1556228453-efd9ff3a7751');
-      background-size: cover;
-      background-position: center;
-      color: white;
+      padding: 4rem 1rem;
     }
-    .hero h2 {
-      font-size: 2rem;
+
+    .hero h3 {
+      font-size: 1.4rem;
+      font-weight: 400;
       margin-bottom: 1rem;
     }
-    .btn {
-      background-color: #a18563;
+
+    .hero button {
+      background-color: #567a53;
       color: white;
-      padding: 0.8rem 1.5rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
       font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
     }
-    section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: 0 auto;
+
+    .hero button:hover {
+      background-color: #3d5a3c;
     }
-    footer {
-      background-color: #eae4d8;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #666;
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero h3 {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo-belunay.png" alt="Belunay Belleza Natural logo">
+    <img src="https://i.imgur.com/NZJ4wRI.png" alt="Logo Belunay" />
     <h1>Belunay Belleza Natural</h1>
-    <p class="tagline">Cuidado consciente de la piel con raíces naturales</p>
+    <h2>Belleza natural que nace de la raíz</h2>
   </header>
 
   <nav>
-    <a href="#">Inicio</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Nuestra historia</a>
     <a href="#productos">Productos</a>
     <a href="#test">Test de piel</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <div class="hero">
-    <h2>Descubre lo que tu piel realmente necesita</h2>
-    <button class="btn" onclick="location.href='test.html'">Haz el Test de Piel</button>
-  </div>
-
-  <section>
-    <h2 id="productos">Nuestros Productos</h2>
-    <p>Creamos productos como crema facial, sérum, jabón artesanal y tónicos capilares con ingredientes naturales, con base de sebo de res y esencias botánicas, ideales para todo tipo de piel.</p>
+  <section class="hero">
+    <h3>Descubre el cuidado perfecto para tu piel con ingredientes naturales</h3>
+    <button onclick="location.href='#test'">DESCUBRE TU TIPO DE PIEL</button>
   </section>
 
-  <footer>
-    &copy; 2025 Belunay Belleza Natural · Hecho con amor y naturaleza 🌿
-  </footer>
 </body>
 </html>
