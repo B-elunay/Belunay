@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belunay Belleza Natural</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fefcf6;
+      color: #3e3e3e;
+    }
+    header {
+      background-color: #f2efe6;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      color: #7a7359;
+      margin-top: 0.5rem;
+    }
+    nav {
+      background-color: #d9d1c1;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #3e3e3e;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-image: url('https://images.unsplash.com/photo-1556228453-efd9ff3a7751');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      background-color: #a18563;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    footer {
+      background-color: #eae4d8;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-belunay.png" alt="Belunay Belleza Natural logo">
+    <h1>Belunay Belleza Natural</h1>
+    <p class="tagline">Cuidado consciente de la piel con raíces naturales</p>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#test">Test de piel</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="hero">
+    <h2>Descubre lo que tu piel realmente necesita</h2>
+    <button class="btn" onclick="location.href='test.html'">Haz el Test de Piel</button>
+  </div>
+
+  <section>
+    <h2 id="productos">Nuestros Productos</h2>
+    <p>Creamos productos como crema facial, sérum, jabón artesanal y tónicos capilares con ingredientes naturales, con base de sebo de res y esencias botánicas, ideales para todo tipo de piel.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Belunay Belleza Natural · Hecho con amor y naturaleza 🌿
+  </footer>
+</body>
+</html>
