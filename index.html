@@ -2,306 +2,146 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Belunay Belleza Natural</title>
-  <style>
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #faf8f3;
-      color: #3e3e3e;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #dcd1c3;
-      padding: 30px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      letter-spacing: 1px;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      border-bottom: 2px solid #c0a68d;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-    }
-    .producto {
-      margin-bottom: 30px;
-    }
-    button {
-      background-color: #c0a68d;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    button:hover {
-      background-color: #a78b75;
-    }
-    input, select {
-      padding: 8px;
-      margin-bottom: 10px;
-      width: 100%;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    #resultado {
-      background-color: #f3ede7;
-      border-left: 4px solid #c0a68d;
-      padding: 15px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Belunay Belleza Natural</h1>
-    <p>Cuidado personal inspirado en la naturaleza y tradición</p>
-  </header>
-
-  <section>
-    <h2>Nuestros Productos</h2>
-    <div class="producto">
-      <h3>Crema Facial</h3>
-      <p>Hidratación profunda con sebo de res y extractos botánicos. Ideal para todo tipo de piel.</p>
-    </div>
-    <div class="producto">
-      <h3>Sérum Facial</h3>
-      <p>Concentrado regenerador con aceite esencial de rosa mosqueta y caléndula.</p>
-    </div>
-    <div class="producto">
-      <h3>Jabón Artesanal</h3>
-      <p>Purificación suave con ingredientes naturales. Sin sulfatos ni fragancias artificiales.</p>
-    </div>
-    <div class="producto">
-      <h3>Tónico Capilar</h3>
-      <p>Fortalecimiento del cuero cabelludo con romero, ortiga y lavanda.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Test: ¿Qué tipo de piel tienes?</h2>
-    <form id="testPiel">
-      <label>Edad:</label>
-      <input type="number" name="edad" min="1" required />
-
-      <label>¿Tu piel brilla mucho durante el día?</label>
-      <select name="brillo">
-        <option value="sí">Sí</option>
-        <option value="no">No</option>
-      </select>
-
-      <label>¿Sientes tu piel seca o con tirantez después de lavarla?</label>
-      <select name="sequedad">
-        <option value="sí">Sí</option>
-        <option value="no">No</option>
-      </select>
-
-      <label>¿Tienes zonas con granitos o enrojecimiento frecuente?</label>
-      <select name="sensibilidad">
-        <option value="sí">Sí</option>
-        <option value="no">No</option>
-      </select>
-
-      <label>¿Tu piel tiene zonas secas y otras muy brillantes?</label>
-      <select name="mixta">
-        <option value="sí">Sí</option>
-        <option value="no">No</option>
-      </select>
-
-      <button type="submit">Ver resultado</button>
-    </form>
-
-    <div id="resultado"></div>
-  </section>
-
-  <script>
-    document.getElementById('testPiel').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const edad = parseInt(e.target.edad.value);
-      const brillo = e.target.brillo.value === 'sí';
-      const sequedad = e.target.sequedad.value === 'sí';
-      const sensibilidad = e.target.sensibilidad.value === 'sí';
-      const mixta = e.target.mixta.value === 'sí';
-
-      let tipo = '';
-      let recomendacion = '';
-
-      if (brillo && !sequedad && !mixta) {
-        tipo = 'Piel Grasa';
-        recomendacion = 'Usa nuestro jabón purificante y tónico capilar para regular el sebo.';
-      } else if (sequedad && !brillo && !mixta) {
-        tipo = 'Piel Seca';
-        recomendacion = 'Recomendamos la crema facial y sérum con ingredientes hidratantes.';
-      } else if (sensibilidad && !brillo && !sequedad) {
-        tipo = 'Piel Sensible';
-        recomendacion = 'El sérum facial con caléndula y el jabón suave son ideales.';
-      } else if (mixta) {
-        tipo = 'Piel Mixta';
-        recomendacion = 'Alterna el jabón con la crema facial en zonas secas.';
-      } else {
-        tipo = 'Piel Normal';
-        recomendacion = 'Puedes usar cualquier producto Belunay según tu necesidad.';
-      }
-
-      const mensaje = `<strong>Tipo de piel:</strong> ${tipo}<br><strong>Recomendación:</strong> ${recomendacion}`;
-      document.getElementById('resultado').innerHTML = mensaje;
-    });
-  </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Belunay Belleza Natural</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #fdfbf5;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fefcf6;
       color: #333;
     }
 
     header {
-      background-color: #fffaf2;
-      padding: 2rem 1rem;
+      background-color: #f8f1e4;
+      padding: 1.5rem;
       text-align: center;
-      border-bottom: 1px solid #e2dcd3;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #3e563e;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #6e584b;
+      border-bottom: 2px solid #d9cbb8;
     }
 
     nav {
-      background-color: #f2ede1;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem;
+      margin-bottom: 1rem;
       font-weight: bold;
     }
 
     nav a {
+      color: #5c5a40;
       text-decoration: none;
-      color: #5b724f;
+      font-size: 1rem;
     }
 
     .hero {
-      background: url('https://i.imgur.com/bYltCzK.png') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-image: url('https://i.imgur.com/suPBgBg.png'); /* Puedes cambiar esto por una imagen propia */
+      background-size: cover;
+      background-position: center;
+      padding: 5rem 2rem;
       text-align: center;
-      color: #fff;
-      flex-direction: column;
+      color: #4a4a2e;
     }
 
-    .hero h2 {
-      font-size: 2rem;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 1rem 2rem;
-      border-radius: 10px;
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
     }
 
     .btn {
-      margin-top: 1rem;
-      padding: 0.7rem 1.5rem;
-      background-color: #4b7049;
+      display: inline-block;
+      background-color: #476b47;
       color: white;
+      padding: 0.8rem 1.5rem;
       border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
+      border-radius: 5px;
       text-decoration: none;
+      font-size: 1rem;
+      margin-top: 1rem;
     }
 
-    section {
-      padding: 2rem;
-      max-width: 900px;
+    .section {
+      padding: 3rem 2rem;
+      max-width: 800px;
       margin: auto;
     }
 
-    h3 {
-      color: #3e563e;
-      border-bottom: 2px solid #ddd0c3;
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #5c5a40;
+      border-bottom: 1px solid #d9cbb8;
       padding-bottom: 0.5rem;
-    }
-
-    .producto {
       margin-bottom: 1.5rem;
     }
 
+    .product {
+      margin-bottom: 2rem;
+    }
+
     footer {
-      background-color: #f2ede1;
+      background-color: #f8f1e4;
       text-align: center;
       padding: 1rem;
-      color: #5b5b5b;
+      font-size: 0.9rem;
+      color: #7a7566;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Belunay Belleza Natural</h1>
-    <p>Cuidado personal inspirado en la naturaleza y tradición</p>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#historia">Nuestra historia</a>
+      <a href="#productos">Productos</a>
+      <a href="#test">Test de piel</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#historia">Nuestra historia</a>
-    <a href="#productos">Productos</a>
-    <a href="#test">Test de piel</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <div class="hero" id="inicio">
-    <h2>Belleza natural que nace de la raíz</h2>
+  <div class="hero">
+    <h1>Belunay Belleza Natural</h1>
+    <p>Belleza natural que nace de la raíz</p>
     <a href="#test" class="btn">Descubre tu tipo de piel</a>
   </div>
 
-  <section id="productos">
-    <h3>Nuestros Productos</h3>
-    <div class="producto">
-      <strong>Crema Facial</strong>
-      <p>Hidratación profunda con sebo de res y extractos botánicos. Ideal para todo tipo de piel.</p>
-    </div>
-    <div class="producto">
-      <strong>Sérum Facial</strong>
-      <p>Concentrado regenerador con aceite esencial de rosa mosqueta y caléndula.</p>
-    </div>
-    <div class="producto">
-      <strong>Jabón Artesanal</strong>
-      <p>Purificación suave con ingredientes naturales. Sin sulfatos ni fragancias artificiales.</p>
-    </div>
-    <div class="producto">
-      <strong>Tónico Capilar</strong>
-      <p>Fortalecimiento del cuero cabelludo con romero, ortiga y lavanda.</p>
-    </div>
+  <section class="section" id="historia">
+    <h2>Nuestra Historia</h2>
+    <p>Belunay nace del deseo de volver a lo natural, a lo tradicional, a las recetas que cuidaban la piel desde la raíz con ingredientes nobles como el sebo de res, aceites puros y plantas medicinales.</p>
+  </section>
+
+  <section class="section" id="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="product"><strong>Crema Facial</strong><br> Hidratación profunda con sebo de res y extractos botánicos. Ideal para todo tipo de piel.</div>
+    <div class="product"><strong>Sérum Facial</strong><br> Concentrado regenerador con aceite esencial de rosa mosqueta y caléndula.</div>
+    <div class="product"><strong>Jabón Artesanal</strong><br> Purificación suave con ingredientes naturales. Sin sulfatos ni fragancias artificiales.</div>
+    <div class="product"><strong>Tónico Capilar</strong><br> Fortalecimiento del cuero cabelludo con romero, ortiga y lavanda.</div>
+  </section>
+
+  <section class="section" id="test">
+    <h2>Test de Tipo de Piel</h2>
+    <p>Muy pronto podrás descubrir tu tipo de piel con nuestro test interactivo y recibir recomendaciones personalizadas.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Belunay Belleza Natural. Todos los derechos reservados.</p>
+    © 2025 Belunay Belleza Natural. Todos los derechos reservados.
   </footer>
 </body>
 </html>
