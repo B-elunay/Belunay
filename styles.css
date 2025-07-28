@@ -1,0 +1,103 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    background-color: #faf8f3;
+    color: #2f3e2f;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #faf8f3;
+    padding: 15px 50px;
+    border-bottom: 1px solid #d3d3d3;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #2f3e2f;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #8a6239;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: url('background.png') no-repeat center/cover;
+}
+
+.hero img.logo {
+    max-width: 230px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #506c4b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #6d8f6a;
+}
+
+section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.test-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.resultado {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #506c4b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f3f0ea;
+    margin-top: 50px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #506c4b;
+    font-size: 1.5em;
+}
