@@ -4,99 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belunay Belleza Natural</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            margin: 0;
-            background-color: #faf8f3;
-            color: #2f3e2f;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #faf8f3;
-            padding: 15px 50px;
-            border-bottom: 1px solid #d3d3d3;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #2f3e2f;
-            font-weight: bold;
-        }
-        header nav a:hover {
-            color: #8a6239;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            background: url('background.png') no-repeat center/cover;
-        }
-        .hero img.logo {
-            max-width: 220px;
-            margin-bottom: 15px;
-        }
-        .hero h1 {
-            font-size: 2.8em;
-            margin: 10px 0;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .btn {
-            background-color: #506c4b;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #6d8f6a;
-        }
-        section {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        h2 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-        .productos p {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-        .test-container {
-            background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #f3f0ea;
-            margin-top: 50px;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #506c4b;
-            font-size: 1.5em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-    <div class="ChatGPT Image 16 jul 2025, 08_00_16 p.m..png">Belunay</div>
+    <div class="logo-title">Belunay</div>
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#historia">Nuestra historia</a>
@@ -153,7 +65,7 @@
             
             <button class="btn" type="submit">Obtener recomendación</button>
         </form>
-        <div id="resultado" style="margin-top:20px; font-weight:bold;"></div>
+        <div id="resultado" class="resultado"></div>
     </div>
 </section>
 
@@ -173,30 +85,6 @@
     <p>&copy; 2025 Belunay Belleza Natural - Todos los derechos reservados.</p>
 </footer>
 
-<script>
-    document.getElementById('skinTest').addEventListener('submit', function(event){
-        event.preventDefault();
-        let edad = parseInt(this.edad.value);
-        let sensacion = this.sensacion.value;
-        let sensibilidad = this.sensibilidad.value;
-        let recomendacion = "";
-
-        if(sensacion === "seca"){
-            recomendacion = "Tu piel es seca. Te recomendamos nuestra Crema Facial nutritiva y el Sérum regenerador.";
-        } else if(sensacion === "grasa"){
-            recomendacion = "Tu piel es grasa. Usa el Jabón Artesanal purificante y el Tónico Capilar ligero.";
-        } else if(sensacion === "mixta"){
-            recomendacion = "Tu piel es mixta. Equilibra con el Jabón Artesanal y el Sérum ligero.";
-        } else {
-            recomendacion = "Tu piel es normal. Nuestra Crema Facial y Sérum son ideales para ti.";
-        }
-
-        if(sensibilidad === "si"){
-            recomendacion += " Además, elige productos suaves sin fragancias.";
-        }
-
-        document.getElementById('resultado').innerText = recomendacion;
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
