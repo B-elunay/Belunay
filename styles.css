@@ -101,3 +101,11 @@ footer {
     color: #506c4b;
     font-size: 1.5em;
 }
+body {
+  background-image: url("fondo-belunay.png"); /* usa la ruta exacta según dónde pongas la imagen */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Georgia', serif;
+}
