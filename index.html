@@ -1,176 +1,202 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belunay Belleza Natural</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway&display=swap" rel="stylesheet">
     <style>
         body {
+            font-family: 'Georgia', serif;
             margin: 0;
-            font-family: 'Raleway', sans-serif;
-            background-color: #fdfcf6;
-            color: #3a3a3a;
+            background-color: #faf8f3;
+            color: #2f3e2f;
         }
         header {
-            background-color: #fff5e9;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid #ddd5c1;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: #faf8f3;
+            padding: 15px 50px;
+            border-bottom: 1px solid #d3d3d3;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        header img {
-            height: 80px;
-        }
-        nav a {
-            margin-left: 1.5rem;
+        header nav a {
+            margin: 0 15px;
             text-decoration: none;
-            color: #4f4f4f;
-            font-weight: 600;
+            color: #2f3e2f;
+            font-weight: bold;
+        }
+        header nav a:hover {
+            color: #8a6239;
         }
         .hero {
             text-align: center;
-            padding: 3rem 1rem;
-            background-color: #fffaf2;
+            padding: 50px 20px;
+            background: url('background.png') no-repeat center/cover;
+        }
+        .hero img.logo {
+            max-width: 220px;
+            margin-bottom: 15px;
         }
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #3d4c2a;
+            font-size: 2.8em;
+            margin: 10px 0;
         }
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.2em;
+            margin-bottom: 20px;
         }
-        .hero button {
-            background-color: #4b6b45;
+        .btn {
+            background-color: #506c4b;
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 12px 25px;
             border: none;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 1em;
             cursor: pointer;
         }
+        .btn:hover {
+            background-color: #6d8f6a;
+        }
         section {
-            padding: 2rem 1rem;
-            max-width: 800px;
-            margin: auto;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
         }
         h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #3d4c2a;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 15px;
         }
-        .producto {
-            margin-bottom: 1rem;
+        .productos p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .test-container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
         footer {
-            background-color: #fff5e9;
             text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            border-top: 1px solid #ddd5c1;
+            padding: 20px;
+            background: #f3f0ea;
+            margin-top: 50px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #506c4b;
+            font-size: 1.5em;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Belunay Logo" class="logo">
-        <nav>
-            <a href="#historia">Nuestra historia</a>
-            <a href="#productos">Productos</a>
-            <a href="#test">Test de piel</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo-title">Belunay</div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Nuestra historia</a>
+        <a href="#productos">Productos</a>
+        <a href="#test">Test de piel</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
 
-    <section class="hero">
-        <h1>Belunay Belleza Natural</h1>
-        <p>Belleza natural que nace de la raíz</p>
-        <button onclick="document.getElementById('test').scrollIntoView({behavior: 'smooth'})">Descubre tu tipo de piel</button>
-    </section>
+<!-- HERO -->
+<section id="inicio" class="hero">
+    <img src="logo.png" alt="Belunay Logo" class="logo">
+    <h1>Belunay Belleza Natural</h1>
+    <p>Belleza natural que nace de la raíz</p>
+    <button class="btn" onclick="document.getElementById('test').scrollIntoView()">Descubre tu tipo de piel</button>
+</section>
 
-    <section id="historia">
-        <h2>Nuestra Historia</h2>
-        <p>
-            Belunay Belleza Natural nació del deseo de volver a lo esencial, inspirándonos en las antiguas prácticas de cuidado corporal
-            basadas en ingredientes nobles y naturales. Desde tiempos remotos, las culturas han utilizado plantas medicinales y
-            mantecas animales y vegetales como el sebo de res o la manteca de cacao para proteger, hidratar y regenerar la piel.
-            Rescatamos ese conocimiento ancestral para crear productos efectivos, nobles y conectados con la tierra.
-        </p>
-    </section>
+<!-- HISTORIA -->
+<section id="historia">
+    <h2>Nuestra Historia</h2>
+    <p>Belunay Belleza Natural nació con el propósito de rescatar el poder de la naturaleza para el cuidado personal. Desde la antigüedad, las civilizaciones usaban plantas, mantecas vegetales y animales para nutrir la piel y mantener su salud. Inspirados en estas prácticas tradicionales, creamos productos elaborados con sebo de res y extractos botánicos, libres de químicos agresivos, para devolverle a tu piel la esencia de lo natural.</p>
+</section>
 
-    <section id="productos">
-        <h2>Nuestros Productos</h2>
-        <div class="producto">
-            <strong>Crema Facial:</strong> Hidratación profunda con sebo de res y extractos botánicos. Ideal para todo tipo de piel.
-        </div>
-        <div class="producto">
-            <strong>Sérum Facial:</strong> Concentrado regenerador con aceite esencial de rosa mosqueta y caléndula.
-        </div>
-        <div class="producto">
-            <strong>Jabón Artesanal:</strong> Purificación suave con ingredientes naturales. Sin sulfatos ni fragancias artificiales.
-        </div>
-        <div class="producto">
-            <strong>Tónico Capilar:</strong> Fortalecimiento del cuero cabelludo con romero, ortiga y lavanda.
-        </div>
-    </section>
+<!-- PRODUCTOS -->
+<section id="productos" class="productos">
+    <h2>Nuestros Productos</h2>
+    <p><strong>Crema Facial:</strong> Hidratación profunda con sebo de res y extractos botánicos. Ideal para todo tipo de piel.</p>
+    <p><strong>Sérum Facial:</strong> Concentrado regenerador con aceite esencial de rosa mosqueta y caléndula.</p>
+    <p><strong>Jabón Artesanal:</strong> Purificación suave con ingredientes naturales. Sin sulfatos ni fragancias artificiales.</p>
+    <p><strong>Tónico Capilar:</strong> Fortalecimiento del cuero cabelludo con romero, ortiga y lavanda.</p>
+</section>
 
-    <section id="test">
-        <h2>Test: ¿Cuál es tu tipo de piel?</h2>
-        <form onsubmit="mostrarResultado(event)">
-            <p>¿Con qué frecuencia tu piel se siente grasosa?</p>
-            <label><input type="radio" name="pregunta1" value="grasa"> Muy seguido</label><br>
-            <label><input type="radio" name="pregunta1" value="seca"> Casi nunca</label><br>
-            <label><input type="radio" name="pregunta1" value="mixta"> Solo en la zona T</label><br>
-            <br>
-            <p>¿Tu piel se irrita fácilmente?</p>
-            <label><input type="radio" name="pregunta2" value="sensible"> Sí</label><br>
-            <label><input type="radio" name="pregunta2" value="resistente"> No</label><br><br>
-            <button type="submit">Ver resultado</button>
+<!-- TEST -->
+<section id="test">
+    <h2>Descubre tu tipo de piel</h2>
+    <div class="test-container">
+        <form id="skinTest">
+            <label>Edad:</label><br>
+            <input type="number" name="edad" required><br><br>
+            
+            <label>¿Cómo sientes tu piel al final del día?</label><br>
+            <select name="sensacion">
+                <option value="seca">Tirada o seca</option>
+                <option value="normal">Normal</option>
+                <option value="grasa">Grasosa</option>
+                <option value="mixta">Mixta</option>
+            </select><br><br>
+            
+            <label>¿Tienes sensibilidad frecuente (enrojecimiento, ardor)?</label><br>
+            <select name="sensibilidad">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select><br><br>
+            
+            <button class="btn" type="submit">Obtener recomendación</button>
         </form>
-        <div id="resultado" style="margin-top:1rem; font-weight: bold;"></div>
-    </section>
+        <div id="resultado" style="margin-top:20px; font-weight:bold;"></div>
+    </div>
+</section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Correo: <a href="mailto:Yepamago.refiney@gmail.com">Yepamago.refiney@gmail.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/573205531994" target="_blank">320 553 1994</a></p>
-        <p>Redes sociales: [espacio para íconos y enlaces]</p>
-    </section>
+<!-- CONTACTO -->
+<section id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Email: <a href="mailto:Yepamago.refiney@gmail.com">Yepamago.refiney@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/573205531994" target="_blank">320 553 1994</a></p>
+    <div class="social-icons">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+    </div>
+</section>
 
-    <footer>
-        &copy; 2025 Belunay Belleza Natural. Todos los derechos reservados.
-    </footer>
+<footer>
+    <p>&copy; 2025 Belunay Belleza Natural - Todos los derechos reservados.</p>
+</footer>
 
-    <script>
-        function mostrarResultado(event) {
-            event.preventDefault();
-            const p1 = document.querySelector('input[name="pregunta1"]:checked')?.value;
-            const p2 = document.querySelector('input[name="pregunta2"]:checked')?.value;
-            let resultado = "";
+<script>
+    document.getElementById('skinTest').addEventListener('submit', function(event){
+        event.preventDefault();
+        let edad = parseInt(this.edad.value);
+        let sensacion = this.sensacion.value;
+        let sensibilidad = this.sensibilidad.value;
+        let recomendacion = "";
 
-            if (p1 === 'grasa') resultado = "Tu piel es grasa. Te recomendamos el jabón artesanal y el tónico capilar.";
-            else if (p1 === 'seca') resultado = "Tu piel es seca. Te recomendamos la crema facial y el sérum nutritivo.";
-            else if (p1 === 'mixta') resultado = "Tu piel es mixta. Puedes usar productos equilibrantes como nuestro sérum y jabón natural.";
-
-            if (p2 === 'sensible') resultado += " Además, es sensible, así que elige productos suaves sin fragancias.";
-
-            document.getElementById("resultado").innerText = resultado;
+        if(sensacion === "seca"){
+            recomendacion = "Tu piel es seca. Te recomendamos nuestra Crema Facial nutritiva y el Sérum regenerador.";
+        } else if(sensacion === "grasa"){
+            recomendacion = "Tu piel es grasa. Usa el Jabón Artesanal purificante y el Tónico Capilar ligero.";
+        } else if(sensacion === "mixta"){
+            recomendacion = "Tu piel es mixta. Equilibra con el Jabón Artesanal y el Sérum ligero.";
+        } else {
+            recomendacion = "Tu piel es normal. Nuestra Crema Facial y Sérum son ideales para ti.";
         }
-    </script>
+
+        if(sensibilidad === "si"){
+            recomendacion += " Además, elige productos suaves sin fragancias.";
+        }
+
+        document.getElementById('resultado').innerText = recomendacion;
+    });
+</script>
 </body>
 </html>
-<!-- Redes Sociales -->
-<section id="redes" style="text-align: center; margin-top: 40px;">
-  <h2>Síguenos en redes sociales</h2>
-  <p style="font-style: italic;">Conecta con Belunay Belleza Natural</p>
-  <div style="font-size: 30px; margin-top: 10px;">
-    <a href="#" target="_blank" style="margin: 0 10px; color: #5e6b4c;"><i class="fab fa-instagram"></i></a>
-    <a href="#" target="_blank" style="margin: 0 10px; color: #5e6b4c;"><i class="fab fa-facebook"></i></a>
-    <a href="#" target="_blank" style="margin: 0 10px; color: #5e6b4c;"><i class="fab fa-tiktok"></i></a>
-    <a href="#" target="_blank" style="margin: 0 10px; color: #5e6b4c;"><i class="fab fa-youtube"></i></a>
-  </div>
-</section>
