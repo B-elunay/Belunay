@@ -14,7 +14,7 @@ body {
 
 /* --- Header con fondo de ramas sin flores --- */
 .hero {
-  background-image: url('background.png'); /* imagen de ramas y aloe vera */
+  background-image: url('fondo-belunay.png'); /* imagen de ramas y aloe vera */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
