@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belunay Belleza Natural</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="logo-title">Belunay</div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Nuestra historia</a>
+        <a href="#productos">Productos</a>
+        <a href="#test">Test de piel</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+    <img src="logo.png" alt="Belunay Logo" class="logo">
+    <h1>Belunay Belleza Natural</h1>
+    <p>Belleza natural que nace de la raíz</p>
+    <button class="btn" onclick="document.getElementById('test').scrollIntoView()">Descubre tu tipo de piel</button>
+</section>
+
+<!-- HISTORIA -->
+<section id="historia">
+    <h2>Nuestra Historia</h2>
+    <p>Belunay Belleza Natural nació con el propósito de rescatar el poder de la naturaleza para el cuidado personal. Desde la antigüedad, las civilizaciones usaban plantas, mantecas vegetales y animales para nutrir la piel y mantener su salud. Inspirados en estas prácticas tradicionales, creamos productos elaborados con sebo de res y extractos botánicos, libres de químicos agresivos, para devolverle a tu piel la esencia de lo natural.</p>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="productos">
+    <h2>Nuestros Productos</h2>
+    <p><strong>Crema Facial:</strong> Hidratación profunda con sebo de res y extractos botánicos. Ideal para todo tipo de piel.</p>
+    <p><strong>Sérum Facial:</strong> Concentrado regenerador con aceite esencial de rosa mosqueta y caléndula.</p>
+    <p><strong>Jabón Artesanal:</strong> Purificación suave con ingredientes naturales. Sin sulfatos ni fragancias artificiales.</p>
+    <p><strong>Tónico Capilar:</strong> Fortalecimiento del cuero cabelludo con romero, ortiga y lavanda.</p>
+</section>
+
+<!-- TEST -->
+<section id="test">
+    <h2>Descubre tu tipo de piel</h2>
+    <div class="test-container">
+        <form id="skinTest">
+            <label>Edad:</label><br>
+            <input type="number" name="edad" required><br><br>
+            
+            <label>¿Cómo sientes tu piel al final del día?</label><br>
+            <select name="sensacion">
+                <option value="seca">Tirada o seca</option>
+                <option value="normal">Normal</option>
+                <option value="grasa">Grasosa</option>
+                <option value="mixta">Mixta</option>
+            </select><br><br>
+            
+            <label>¿Tienes sensibilidad frecuente (enrojecimiento, ardor)?</label><br>
+            <select name="sensibilidad">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select><br><br>
+            
+            <button class="btn" type="submit">Obtener recomendación</button>
+        </form>
+        <div id="resultado" class="resultado"></div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Email: <a href="mailto:Yepamago.refiney@gmail.com">Yepamago.refiney@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/573205531994" target="_blank">320 553 1994</a></p>
+    <div class="social-icons">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Belunay Belleza Natural - Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
