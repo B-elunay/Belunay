@@ -1,28 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belunay Belleza Natural</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belunay Belleza Natural</title>
+<style>
+    body {
+        font-family: 'Georgia', serif;
+        background: #faf8f3 url('fondo-botanico.png') repeat;
+        margin: 0;
+        padding: 0;
+        color: #3a3a3a;
+    }
+    header {
+        text-align: center;
+        padding: 30px;
+        background-color: rgba(255,255,255,0.9);
+    }
+    header img {
+        width: 220px;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #e9e4d8;
+        padding: 12px;
+        border-bottom: 2px solid #c17f39;
+    }
+    nav a {
+        margin: 0 20px;
+        text-decoration: none;
+        color: #3a5a40;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .hero {
+        text-align: center;
+        padding: 60px;
+    }
+    .hero h1 {
+        font-size: 42px;
+        color: #3a5a40;
+    }
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .hero button {
+        background-color: #3a5a40;
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    section {
+        padding: 40px;
+        max-width: 900px;
+        margin: auto;
+        background-color: rgba(255,255,255,0.85);
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #3a5a40;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 600px;
+        width: 90%;
+    }
+    .modal-content h2 {
+        text-align: center;
+    }
+    .modal-content select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+    }
+    .close-btn, .submit-btn {
+        background: #c17f39;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 8px;
+        display: block;
+        margin: 10px auto;
+    }
+    #resultadoTest {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
 </head>
 <body>
+<header>
+    <img src="logo.png" alt="Belunay Logo">
+</header>
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Nuestra historia</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+<section id="inicio" class="hero">
+    <h1>Belunay Belleza Natural</h1>
+    <p>Belleza natural que nace de la raíz</p>
+    <button onclick="openModal()">Descubre tu tipo de piel</button>
+</section>
+<section id="historia">
+    <h2>Nuestra Historia</h2>
+    <p>Belunay Belleza Natural nació con el propósito de rescatar el poder de la naturaleza para el cuidado personal. Desde la antigüedad, las personas han utilizado plantas medicinales y mantecas naturales para cuidar su piel y cabello. Ingredientes como la manzanilla calmante, el romero revitalizante, la caléndula regeneradora, junto con manteca de karité, cacao y coco, han sido tesoros naturales usados durante siglos.</p>
+</section>
+<section id="productos">
+    <h2>Nuestros Productos</h2>
+    <p><strong>Crema Facial:</strong> Hidratación profunda con sebo de res y extractos botánicos.</p>
+    <p><strong>Sérum Facial:</strong> Concentrado regenerador con aceites naturales.</p>
+    <p><strong>Jabón Artesanal:</strong> Limpieza suave con ingredientes naturales.</p>
+    <p><strong>Tónico Capilar:</strong> Fortalece y nutre el cuero cabelludo con extractos herbales.</p>
+</section>
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: Yepamago.refiney@gmail.com</p>
+    <p>WhatsApp: 3205531994</p>
+</section>
 
-  <header class="hero">
-    <img src="logo.png" alt="Belunay Belleza Natural" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="historia.html">Nuestra Historia</a></li>
-        <li><a href="productos.html">Nuestros Productos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-    <div class="hero-text">
-      <h1>Descubre tu tipo de piel</h1>
-      <a href="test.html" class="btn">Realizar test</a>
+<!-- Modal del Test -->
+<div class="modal" id="testModal">
+    <div class="modal-content">
+        <h2>Test: Descubre tu tipo de piel</h2>
+        <form id="formularioTest">
+            <select id="edad">
+                <option>Edad</option>
+                <option>6–12</option><option>13–19</option><option>20–35</option>
+                <option>36–55</option><option>56+</option>
+            </select>
+            <select id="brillo">
+                <option>¿Tu piel se ve brillante o grasa al despertar?</option>
+                <option>Sí, bastante</option><option>Moderadamente</option><option>No</option>
+            </select>
+            <select id="poros">
+                <option>¿Qué aspecto tienen los poros de tu piel?</option>
+                <option>Grandes y visibles</option><option>Pequeños</option><option>Solo visibles en zona T</option>
+            </select>
+            <select id="sensacion">
+                <option>¿Tu piel se siente seca o con picazón?</option>
+                <option>Frecuentemente</option><option>Solo a veces</option><option>Rara vez</option>
+            </select>
+            <select id="brotes">
+                <option>¿Tiendes a tener brotes/acné?</option>
+                <option>Muy a menudo</option><option>A veces</option><option>Casi nunca</option>
+            </select>
+            <select id="textura">
+                <option>¿Cómo describirías la textura de tu piel?</option>
+                <option>Áspera o escamosa</option><option>Suave</option><option>Grasa al tacto</option>
+            </select>
+            <select id="sensibilidad">
+                <option>¿Tu piel se enrojece o irrita fácilmente?</option>
+                <option>Sí</option><option>A veces</option><option>No</option>
+            </select>
+            <button type="button" class="submit-btn" onclick="evaluarTest()">Ver mi resultado</button>
+        </form>
+        <div id="resultadoTest"></div>
+        <button class="close-btn" onclick="closeModal()">Cerrar</button>
     </div>
-  </header>
+</div>
 
+<script>
+function openModal() {
+    document.getElementById('testModal').style.display = 'flex';
+}
+function closeModal() {
+    document.getElementById('testModal').style.display = 'none';
+    document.getElementById('resultadoTest').innerText = '';
+    document.getElementById('formularioTest').reset();
+}
+function evaluarTest() {
+    const brillo = document.getElementById('brillo').value;
+    const poros = document.getElementById('poros').value;
+    const sensacion = document.getElementById('sensacion').value;
+    const brotes = document.getElementById('brotes').value;
+    const textura = document.getElementById('textura').value;
+    const sensibilidad = document.getElementById('sensibilidad').value;
+
+    let score = 0;
+    if (brillo === 'Sí, bastante') score++;
+    if (poros === 'Grandes y visibles') score++;
+    if (sensacion === 'Frecuentemente') score--;
+    if (brotes === 'Muy a menudo') score++;
+    if (textura === 'Grasa al tacto') score++;
+    if (textura === 'Áspera o escamosa') score--;
+    if (sensibilidad === 'Sí') score--;
+
+    let resultado = '';
+    if (score <= -1) resultado = 'Tu piel es seca';
+    else if (score === 0) resultado = 'Tu piel es normal';
+    else if (score === 1 || score === 2) resultado = 'Tu piel es mixta';
+    else resultado = 'Tu piel es grasa';
+
+    document.getElementById('resultadoTest').innerText = resultado;
+}
+</script>
 </body>
 </html>
