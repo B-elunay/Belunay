@@ -1,223 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belunay Belleza Natural</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            background: url('background.png') repeat;
-            background-size: cover;
-            color: #3a3a3a;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px;
-            background-color: #f8f4efcc;
-        }
-
-        header img {
-            width: 200px;
-            height: auto;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #d8c8b8;
-            padding: 10px;
-        }
-
-        nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: #3a3a3a;
-            font-weight: bold;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 40px;
-        }
-
-        .hero h1 {
-            font-size: 40px;
-            color: #3a5a40;
-        }
-
-        .hero button {
-            background-color: #3a5a40;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        section {
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #3a5a40;
-        }
-
-        /* Productos */
-        .productos div {
-            margin-bottom: 15px;
-        }
-
-        /* Formulario Test */
-        .test form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .test label {
-            font-weight: bold;
-        }
-
-        .test select {
-            padding: 8px;
-            border: 1px solid #ccc;
-        }
-
-        .test button {
-            margin-top: 20px;
-            background-color: #3a5a40;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #d8c8b8;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .social-icons img {
-            width: 40px;
-            margin: 5px;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belunay Belleza Natural</title>
+<style>
+    body {
+        font-family: 'Georgia', serif;
+        background: #faf8f3 url('fondo-botanico.png') repeat;
+        margin: 0;
+        padding: 0;
+        color: #3a3a3a;
+    }
+    header {
+        text-align: center;
+        padding: 30px;
+        background-color: rgba(255,255,255,0.9);
+    }
+    header img {
+        width: 220px;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #e9e4d8;
+        padding: 12px;
+        border-bottom: 2px solid #c17f39;
+    }
+    nav a {
+        margin: 0 20px;
+        text-decoration: none;
+        color: #3a5a40;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .hero {
+        text-align: center;
+        padding: 60px;
+    }
+    .hero h1 {
+        font-size: 42px;
+        color: #3a5a40;
+    }
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .hero button {
+        background-color: #3a5a40;
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    section {
+        padding: 40px;
+        max-width: 900px;
+        margin: auto;
+        background-color: rgba(255,255,255,0.85);
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #3a5a40;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 600px;
+        width: 90%;
+    }
+    .modal-content h2 {
+        text-align: center;
+    }
+    .modal-content select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+    }
+    .close-btn, .submit-btn {
+        background: #c17f39;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 8px;
+        display: block;
+        margin: 10px auto;
+    }
+    #resultadoTest {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Belunay Logo">
-    </header>
+<header>
+    <img src="logo.png" alt="Belunay Logo">
+</header>
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Nuestra historia</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+<section id="inicio" class="hero">
+    <h1>Belunay Belleza Natural</h1>
+    <p>Belleza natural que nace de la raíz</p>
+    <button onclick="openModal()">Descubre tu tipo de piel</button>
+</section>
+<section id="historia">
+    <h2>Nuestra Historia</h2>
+    <p>Belunay Belleza Natural nació con el propósito de rescatar el poder de la naturaleza para el cuidado personal. Desde la antigüedad, las personas han utilizado plantas medicinales y mantecas naturales para cuidar su piel y cabello. Ingredientes como la manzanilla calmante, el romero revitalizante, la caléndula regeneradora, junto con manteca de karité, cacao y coco, han sido tesoros naturales usados durante siglos.</p>
+</section>
+<section id="productos">
+    <h2>Nuestros Productos</h2>
+    <p><strong>Crema Facial:</strong> Hidratación profunda con sebo de res y extractos botánicos.</p>
+    <p><strong>Sérum Facial:</strong> Concentrado regenerador con aceites naturales.</p>
+    <p><strong>Jabón Artesanal:</strong> Limpieza suave con ingredientes naturales.</p>
+    <p><strong>Tónico Capilar:</strong> Fortalece y nutre el cuero cabelludo con extractos herbales.</p>
+</section>
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: Yepamago.refiney@gmail.com</p>
+    <p>WhatsApp: 3205531994</p>
+</section>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#historia">Nuestra historia</a>
-        <a href="#productos">Productos</a>
-        <a href="#test">Test de piel</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
-    <section id="inicio" class="hero">
-        <h1>Belunay Belleza Natural</h1>
-        <p>Belleza natural que nace de la raíz</p>
-        <button onclick="document.getElementById('test').scrollIntoView();">Descubre tu tipo de piel</button>
-    </section>
-
-    <section id="historia">
-        <h2>Nuestra Historia</h2>
-        <p>Belunay Belleza Natural nació con el propósito de rescatar el poder de la naturaleza para el cuidado personal. 
-        Desde la antigüedad, las personas han utilizado plantas, hierbas, mantecas vegetales y animales para cuidar su piel y cabello. 
-        Ingredientes como la manzanilla, el romero, la caléndula, la manteca de cacao y la manteca de karité eran esenciales en rituales 
-        de belleza por sus propiedades hidratantes, calmantes y nutritivas. Hoy, en Belunay unimos tradición y ciencia para ofrecer productos 
-        100% naturales, inspirados en la raíz misma de la belleza.</p>
-    </section>
-
-    <section id="productos">
-        <h2>Nuestros Productos</h2>
-        <div class="productos">
-            <div><strong>Crema Facial:</strong> Hidratación profunda con sebo de res y extractos botánicos.</div>
-            <div><strong>Sérum Facial:</strong> Concentrado regenerador con aceites naturales.</div>
-            <div><strong>Jabón Artesanal:</strong> Limpieza suave con ingredientes naturales.</div>
-            <div><strong>Tónico Capilar:</strong> Fortalece y nutre el cuero cabelludo con extractos herbales.</div>
-        </div>
-    </section>
-
-    <section id="test" class="test">
+<!-- Modal del Test -->
+<div class="modal" id="testModal">
+    <div class="modal-content">
         <h2>Test: Descubre tu tipo de piel</h2>
-        <form id="skinTest">
-            <label>1. Edad</label>
-            <select><option>Niño/a (6–12 años)</option><option>Adolescente (13–19 años)</option><option>Adulto joven (20–35 años)</option><option>Adulto (36–55 años)</option><option>Adulto mayor (56+)</option></select>
-            
-            <label>2. Sexo</label>
-            <select><option>Mujer</option><option>Hombre</option><option>Otro</option></select>
-            
-            <label>3. ¿Cómo se siente tu piel al despertar?</label>
-            <select><option>A - Muy tirante o seca</option><option>B - Suave y equilibrada</option><option>C - Grasa o brillante</option><option>D - Grasa en la zona T y seca en mejillas</option><option>E - Sensible o con enrojecimiento</option></select>
-
-            <label>4. ¿Qué aspecto tiene tu piel al final del día?</label>
-            <select><option>A - Seca, escamosa</option><option>B - Normal, sin cambios</option><option>C - Brillante y grasa</option><option>D - Algunas zonas grasas y otras secas</option><option>E - Rojeces, brotes o ardor</option></select>
-
-            <label>5. ¿Cómo reacciona tu piel a nuevos productos?</label>
-            <select><option>A - Tiende a resecarse</option><option>B - Bien, no hay molestias</option><option>C - Produce más grasa</option><option>D - A veces salen brotes</option><option>E - Se enrojece fácilmente</option></select>
-
-            <button type="button" onclick="calcularTipoPiel()">Ver resultado</button>
+        <form id="formularioTest">
+            <select id="edad">
+                <option>Edad</option>
+                <option>6–12</option><option>13–19</option><option>20–35</option>
+                <option>36–55</option><option>56+</option>
+            </select>
+            <select id="brillo">
+                <option>¿Tu piel se ve brillante o grasa al despertar?</option>
+                <option>Sí, bastante</option><option>Moderadamente</option><option>No</option>
+            </select>
+            <select id="poros">
+                <option>¿Qué aspecto tienen los poros de tu piel?</option>
+                <option>Grandes y visibles</option><option>Pequeños</option><option>Solo visibles en zona T</option>
+            </select>
+            <select id="sensacion">
+                <option>¿Tu piel se siente seca o con picazón?</option>
+                <option>Frecuentemente</option><option>Solo a veces</option><option>Rara vez</option>
+            </select>
+            <select id="brotes">
+                <option>¿Tiendes a tener brotes/acné?</option>
+                <option>Muy a menudo</option><option>A veces</option><option>Casi nunca</option>
+            </select>
+            <select id="textura">
+                <option>¿Cómo describirías la textura de tu piel?</option>
+                <option>Áspera o escamosa</option><option>Suave</option><option>Grasa al tacto</option>
+            </select>
+            <select id="sensibilidad">
+                <option>¿Tu piel se enrojece o irrita fácilmente?</option>
+                <option>Sí</option><option>A veces</option><option>No</option>
+            </select>
+            <button type="button" class="submit-btn" onclick="evaluarTest()">Ver mi resultado</button>
         </form>
-        <p id="resultado" style="font-weight:bold;margin-top:20px;"></p>
-    </section>
+        <div id="resultadoTest"></div>
+        <button class="close-btn" onclick="closeModal()">Cerrar</button>
+    </div>
+</div>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Email: <a href="mailto:Yepamago.refiney@gmail.com">Yepamago.refiney@gmail.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/573205531994" target="_blank">320 553 1994</a></p>
-        <p>Síguenos en redes sociales:</p>
-        <div class="social-icons">
-            <img src="facebook-icon.png" alt="Facebook">
-            <img src="instagram-icon.png" alt="Instagram">
-            <img src="tiktok-icon.png" alt="TikTok">
-        </div>
-    </section>
+<script>
+function openModal() {
+    document.getElementById('testModal').style.display = 'flex';
+}
+function closeModal() {
+    document.getElementById('testModal').style.display = 'none';
+    document.getElementById('resultadoTest').innerText = '';
+    document.getElementById('formularioTest').reset();
+}
+function evaluarTest() {
+    const brillo = document.getElementById('brillo').value;
+    const poros = document.getElementById('poros').value;
+    const sensacion = document.getElementById('sensacion').value;
+    const brotes = document.getElementById('brotes').value;
+    const textura = document.getElementById('textura').value;
+    const sensibilidad = document.getElementById('sensibilidad').value;
 
-    <footer>
-        <p>© 2025 Belunay Belleza Natural. Todos los derechos reservados.</p>
-    </footer>
+    let score = 0;
+    if (brillo === 'Sí, bastante') score++;
+    if (poros === 'Grandes y visibles') score++;
+    if (sensacion === 'Frecuentemente') score--;
+    if (brotes === 'Muy a menudo') score++;
+    if (textura === 'Grasa al tacto') score++;
+    if (textura === 'Áspera o escamosa') score--;
+    if (sensibilidad === 'Sí') score--;
 
-    <script>
-        function calcularTipoPiel() {
-            let selects = document.querySelectorAll('#skinTest select');
-            let conteo = {A:0,B:0,C:0,D:0,E:0};
-            selects.forEach((select, i) => {
-                if (i > 1) { // Solo preguntas que suman puntos
-                    let letra = select.value.charAt(0);
-                    conteo[letra]++;
-                }
-            });
+    let resultado = '';
+    if (score <= -1) resultado = 'Tu piel es seca';
+    else if (score === 0) resultado = 'Tu piel es normal';
+    else if (score === 1 || score === 2) resultado = 'Tu piel es mixta';
+    else resultado = 'Tu piel es grasa';
 
-            let tipo = '';
-            let max = 0;
-            for (let clave in conteo) {
-                if (conteo[clave] > max) { max = conteo[clave]; tipo = clave; }
-            }
-
-            let descripcion = '';
-            if (tipo === 'A') descripcion = 'Tu piel es SECA. Necesita hidratación profunda con cremas nutritivas.';
-            if (tipo === 'B') descripcion = 'Tu piel es NORMAL. Mantén un cuidado equilibrado.';
-            if (tipo === 'C') descripcion = 'Tu piel es GRASA. Necesitas productos que regulen el sebo.';
-            if (tipo === 'D') descripcion = 'Tu piel es MIXTA. Usa productos específicos para cada zona.';
-            if (tipo === 'E') descripcion = 'Tu piel es SENSIBLE. Prefiere productos suaves y sin fragancias.';
-
-            document.getElementById('resultado').innerText = descripcion;
-        }
-    </script>
+    document.getElementById('resultadoTest').innerText = resultado;
+}
+</script>
 </body>
 </html>
