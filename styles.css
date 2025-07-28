@@ -76,3 +76,32 @@ nav a:hover {
 .btn:hover {
   background-color: #a08864;
 }
+/* --- Subpáginas --- */
+.hero-sub {
+  background-color: #f5f3ee;
+  padding: 40px 20px 10px;
+  text-align: center;
+}
+
+.contenido {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.contenido h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #5b483a;
+}
+
+.contenido ul {
+  list-style: square;
+  padding-left: 20px;
+}
+
+.contenido li {
+  margin-bottom: 12px;
+}
